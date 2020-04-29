@@ -1,0 +1,19 @@
+{
+  "name": "hl7-fhir-connectathon-may2020-sec-labeling-track",
+  "version": "1.0.0",
+  "description": "test scripts for hl7 fhir connectathon may2020 sec labeling track",
+  "main": "index.js",
+  "repository": "git@github.com:mojitoj/hl7-fhir-connectathon-may2020-sec-labeling-track.git",
+  "author": "Mohammad Jafari <jafarim@gmail.com>",
+  "scripts": {
+    "test": "jest --runInBand --forceExit"
+  },
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "jest": "^25.5.0",
+    "lodash": "^4.17.15",
+    "superagent": "^5.2.2"
+  }
+}
