@@ -1,0 +1,97 @@
+{
+  "resourceType": "Bundle",
+  "id": "bundle-transaction",
+  "meta": {
+    "lastUpdated": "2014-08-18T01:43:30Z"
+  },
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "fhir-ds4p-example-patient",
+        "meta": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/security-label-ds4p/StructureDefinition/extension-must-display",
+              "valueAnnotation": {
+                "authorReference": {
+                  "type": "Organization",
+                  "display": "Veteran Health Administration"
+                },
+                "text": "**CUI//SP-HLTH/HLTH/PRVCY**\r\n\r\n ([Veterans Health Administration, Washington, DC 20420](http://example.fhir.org/Organization/vha))"
+              }
+            }
+          ],
+          "security": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+              "code": "V"
+            }
+          ]
+        },
+        "gender": "male",
+        "active": true,
+        "identifier": [
+          {
+            "system": "http:/example.org/fhir/ids",
+            "value": "fhir-ds4p-example-patient"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient?identifier=http:/example.org/fhir/ids|fhir-ds4p-example-patient"
+      }
+    },
+    {
+      "fullUrl": "",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "fhir-ds4p-example-extension-sec-label-related-artifact-provenance",
+        "meta": {
+          "security": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/security-label-ds4p/StructureDefinition/extension-sec-label-related-artifact",
+                  "valueRelatedArtifact": {
+                    "type": "documentation",
+                    "url": "http://example.fhir.org/base/Provenance/some-provenance"
+                  }
+                }
+              ],
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationValue",
+              "code": "PATRPT",
+              "display": "patient reported"
+            }
+          ]
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8331-1",
+              "display": "Oral temperature"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/fhir-ds4p-example-patient"
+        },
+        "identifier": [
+          {
+            "system": "http:/example.org/fhir/ids",
+            "value": "fhir-ds4p-example-extension-sec-label-related-artifact-provenance"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation?identifier=http:/example.org/fhir/ids|fhir-ds4p-example-extension-sec-label-related-artifact-provenance"
+      }
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "resourceType": "Bundle",
+  "id": "bundle-transaction",
+  "meta": {
+    "lastUpdated": "2020-04-30T01:43:30Z"
+  },
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "fhir-ds4p-example-patient",
+        "meta": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/security-label-ds4p/StructureDefinition/extension-must-display",
+              "valueAnnotation": {
+                "authorReference": {
+                  "type": "Organization",
+                  "display": "Veteran Health Administration"
+                },
+                "text": "**CUI//SP-HLTH/HLTH/PRVCY**\r\n\r\n ([Veterans Health Administration, Washington, DC 20420](http://example.fhir.org/Organization/vha))"
+              }
+            }
+          ]
+        },
+        "gender": "male",
+        "active": true,
+        "identifier": [
+          {
+            "system": "http:/example.org/fhir/ids",
+            "value": "fhir-ds4p-example-patient"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient?identifier=http:/example.org/fhir/ids|fhir-ds4p-example-patient"
+      }
+    },
+    {
+      "fullUrl": "",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "fhir-ds4p-example-extension-sec-label-basis",
+        "meta": {
+          "security": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/security-label-ds4p/StructureDefinition/extension-sec-label-basis",
+                  "valueCoding": {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                    "code": "42CFRPart2"
+                  }
+                }
+              ],
+              "system": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+              "code": "R",
+              "display": "Restricted"
+            }
+          ]
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "600-7",
+              "display": "Bacteria identified in Blood by Culture"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/fhir-ds4p-example-patient"
+        },
+        "identifier": [
+          {
+            "system": "http:/example.org/fhir/ids",
+            "value": "fhir-ds4p-example-extension-sec-label-basis"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation?identifier=http:/example.org/fhir/ids|fhir-ds4p-example-extension-sec-label-basis"
+      }
+    },
+    {
+      "fullUrl": "",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "fhir-ds4p-example-extension-sec-label-related-artifact-consent",
+        "meta": {
+          "security": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/security-label-ds4p/StructureDefinition/extension-sec-label-related-artifact",
+                  "valueRelatedArtifact": {
+                    "type": "justification",
+                    "url": "http://example.fhir.org/base/Consent/218304"
+                  }
+                }
+              ],
+              "system": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+              "code": "R",
+              "display": "Restricted"
+            }
+          ]
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "600-7",
+              "display": "Bacteria identified in Blood by Culture"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/fhir-ds4p-example-patient"
+        },
+        "identifier": [
+          {
+            "system": "http:/example.org/fhir/ids",
+            "value": "fhir-ds4p-example-extension-sec-label-related-artifact-consent"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation?identifier=http:/example.org/fhir/ids|fhir-ds4p-example-extension-sec-label-related-artifact-consent"
+      }
+    },
+    {
+      "fullUrl": "",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "fhir-ds4p-example-extension-sec-label-classifier",
+        "meta": {
+          "security": [
+            {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/uv/security-label-ds4p/StructureDefinition/extension-sec-label-classifier",
+                  "valueContributor": {
+                    "type": "reviewer",
+                    "name": "John Doe",
+                    "contact": [
+                      {
+                        "name": "John Doe",
+                        "telecom": [
+                          {
+                            "system": "email",
+                            "value": "john@doe.com",
+                            "use": "work"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ],
+              "system": "http://terminology.hl7.org/CodeSystem/v3-Confidentiality",
+              "code": "R",
+              "display": "Restricted"
+            }
+          ]
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "600-7",
+              "display": "Bacteria identified in Blood by Culture"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/fhir-ds4p-example-patient"
+        },
+        "identifier": [
+          {
+            "system": "http:/example.org/fhir/ids",
+            "value": "fhir-ds4p-example-extension-sec-label-classifier"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Observation?identifier=http:/example.org/fhir/ids|fhir-ds4p-example-extension-sec-label-classifier"
+      }
+    }
+  ]
+}
