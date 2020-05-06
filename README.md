@@ -18,7 +18,7 @@ http://hl7.org/fhir/uv/security-label-ds4p/ImplementationGuide/hl7.fhir.uv.secur
 
 - The FHIR Server is capable of adding high-watermark confidentiality label to a response bundle based on the contents of the bundle. 
 
-- (bonus) Supporting high-watermark on the response bundle for other types security labels.
+- (bonus) Supporting high-watermark on the response bundle for other types security labels (other than confidentiality).
 
 ## Running the Test Scripts
 You can run the test scripts provided in this repository by following the steps below. As prerequisites, you will need `node.js` and `yarn` installed in your environment.
