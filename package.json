@@ -12,7 +12,7 @@
   "private": false,
   "devDependencies": {
     "dotenv": "^8.2.0",
-    "jest": "^25.5.0",
+    "jest": "^27.0.3",
     "lodash": "^4.17.21",
     "superagent": "^5.2.2"
   }
